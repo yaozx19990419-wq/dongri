@@ -1,37 +1,68 @@
-import type React from "react"
-import type { Metadata, Viewport } from "next"
+import type React from "react";
+import type { Metadata, Viewport } from "next";
 
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
-import { Noto_Sans_SC, Pixelify_Sans, DM_Sans as V0_Font_DM_Sans, Space_Mono as V0_Font_Space_Mono, Source_Serif_4 as V0_Font_Source_Serif_4 } from 'next/font/google'
+import {
+  Noto_Sans_SC,
+  Pixelify_Sans,
+  DM_Sans as V0_Font_DM_Sans,
+  Space_Mono as V0_Font_Space_Mono,
+  Source_Serif_4 as V0_Font_Source_Serif_4,
+} from "next/font/google";
 
 // Initialize fonts
-const _dmSans = V0_Font_DM_Sans({ subsets: ['latin'], weight: ["100","200","300","400","500","600","700","800","900","1000"] })
-const _spaceMono = V0_Font_Space_Mono({ subsets: ['latin'], weight: ["400","700"] })
-const _sourceSerif_4 = V0_Font_Source_Serif_4({ subsets: ['latin'], weight: ["200","300","400","500","600","700","800","900"] })
+const _dmSans = V0_Font_DM_Sans({
+  subsets: ["latin"],
+  weight: [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900",
+    "1000",
+  ],
+});
+const _spaceMono = V0_Font_Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+const _sourceSerif_4 = V0_Font_Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
-const _notoSansSC = Noto_Sans_SC({ subsets: ["latin"], variable: "--font-sans" })
-const _pixelify = Pixelify_Sans({ subsets: ["latin"], variable: "--font-pixel" })
+const _notoSansSC = Noto_Sans_SC({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+const _pixelify = Pixelify_Sans({
+  subsets: ["latin"],
+  variable: "--font-pixel",
+});
 
 export const metadata: Metadata = {
   title: {
-    default: "冬日狂想曲 - Winter Memories | 官方游戏下载站",
-    template: "%s | 冬日狂想曲 - Winter Memories",
+    default: "冬日狂想曲官方正版下载-Winter Memories官网",
+    template: "%s | 冬日狂想曲官网 - Winter Memories",
   },
   description:
-    "《冬日狂想曲》是一款温馨治愈的像素风格文字冒险游戏（AVG），在18天的寒假时光里，与她们共度难忘的冬日回忆。Steam 93%好评如潮，59+精美CG，10+可攻略角色。立即下载体验！",
+    "《冬日狂想曲》是一款温馨治愈的像素风格文字冒险游戏，本站为Winter Memories官网，提供手机版安卓和苹果版下载，PC电脑版下载，一键获取完整游戏安装包，解锁雪地探索、剧情解谜等特色玩法。",
   keywords: [
-    "冬日狂想曲",
+    "冬日狂想曲官网",
     "Winter Memories",
-    "像素游戏",
-    "AVG游戏",
-    "文字冒险游戏",
-    "Galgame",
-    "夏日狂想曲续作",
-    "Steam游戏",
-    "恋爱模拟",
-    "剧情游戏",
+    "冬日狂想曲下载",
+    "冬日狂想曲安装包",
+    "冬日狂想曲手机版下载",
+    "冬日狂想曲苹果版下载",
+    "冬日狂想曲安卓版下载",
+    "冬日狂想曲PC版下载",
+    "冬日狂想曲官网下载",
   ],
   authors: [{ name: "冬日狂想曲官方" }],
   creator: "冬日狂想曲团队",
@@ -53,7 +84,8 @@ export const metadata: Metadata = {
     url: "https://winter-memories.game",
     siteName: "冬日狂想曲 - Winter Memories",
     title: "冬日狂想曲 - 温馨治愈的像素风文字冒险游戏",
-    description: "在姑姑家度过的18天寒假，与她们共同编织温馨难忘的冬日回忆。Steam 93%好评，59+精美CG，立即下载！",
+    description:
+      "在姑姑家度过的18天寒假，与她们共同编织温馨难忘的冬日回忆。Steam 93%好评，59+精美CG，立即下载！",
     images: [
       {
         url: "/og-image.png",
@@ -80,8 +112,8 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-    generator: 'v0.app'
-}
+  generator: "v0.app",
+};
 
 export const viewport: Viewport = {
   themeColor: [
@@ -91,12 +123,12 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="zh-CN">
@@ -133,5 +165,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

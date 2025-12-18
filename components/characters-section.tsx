@@ -1,29 +1,32 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Heart } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card";
+import { Heart } from "lucide-react";
 
 const characters = [
   {
     name: "姑姑",
     role: "温柔的守护者",
     description: "温柔体贴的姑姑，在你的寒假中给予无微不至的关怀。",
-    image: "/placeholder.svg?height=300&width=250",
-    color: "bg-gradient-to-br from-rose-100 via-pink-100 to-rose-50 dark:from-rose-950 dark:via-pink-950 dark:to-rose-900",
+    image: "/juese/gugu.jpg",
+    color:
+      "bg-gradient-to-br from-rose-100 via-pink-100 to-rose-50 dark:from-rose-950 dark:via-pink-950 dark:to-rose-900",
   },
   {
     name: "大表姐",
     role: "成熟的姐姐",
     description: "成熟稳重的大表姐，有着让人安心的可靠气质。",
-    image: "/placeholder.svg?height=300&width=250",
-    color: "bg-gradient-to-br from-purple-100 via-indigo-100 to-purple-50 dark:from-purple-950 dark:via-indigo-950 dark:to-purple-900",
+    image: "/juese/20250228113037413741.jpg",
+    color:
+      "bg-gradient-to-br from-purple-100 via-indigo-100 to-purple-50 dark:from-purple-950 dark:via-indigo-950 dark:to-purple-900",
   },
   {
-    name: "小表妹",
+    name: "小表姐",
     role: "活泼的少女",
-    description: "活泼开朗的小表妹，总是带来欢声笑语。",
-    image: "/placeholder.svg?height=300&width=250",
-    color: "bg-gradient-to-br from-amber-100 via-yellow-100 to-amber-50 dark:from-amber-950 dark:via-yellow-950 dark:to-amber-900",
+    description: "活泼开朗的小表姐，总是带来欢声笑语。",
+    image: "/juese/xiaobiaojie.jpg",
+    color:
+      "bg-gradient-to-br from-amber-100 via-yellow-100 to-amber-50 dark:from-amber-950 dark:via-yellow-950 dark:to-amber-900",
   },
-]
+];
 
 export function CharactersSection() {
   return (
@@ -32,15 +35,22 @@ export function CharactersSection() {
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold">主要角色</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">在这个冬天，与她们建立特别的羁绊</p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            在这个冬天，与她们建立特别的羁绊
+          </p>
         </div>
 
         {/* Characters Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {characters.map((character, index) => (
-            <Card key={index} className="border-4 border-border overflow-hidden group hover:shadow-lg transition-all">
+            <Card
+              key={index}
+              className="border-4 border-border overflow-hidden group hover:shadow-lg transition-all"
+            >
               {/* Character Image */}
-              <div className={`aspect-[5/6] ${character.color} relative overflow-hidden`}>
+              <div
+                className={`aspect-[5/6] ${character.color} relative overflow-hidden`}
+              >
                 <img
                   src={character.image || "/placeholder.svg"}
                   alt={character.name}
@@ -56,7 +66,9 @@ export function CharactersSection() {
                   <Heart className="w-5 h-5 text-primary" />
                 </div>
                 <p className="text-primary font-medium">{character.role}</p>
-                <p className="text-muted-foreground leading-relaxed">{character.description}</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {character.description}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -64,9 +76,11 @@ export function CharactersSection() {
 
         {/* Additional Info */}
         <div className="mt-12 text-center">
-          <p className="text-muted-foreground">除了三位主要角色外，还有七位魅力十足的配角等待你的邂逅</p>
+          <p className="text-muted-foreground">
+            除了三位主要角色外，还有七位魅力十足的配角等待你的邂逅
+          </p>
         </div>
       </div>
     </section>
-  )
+  );
 }

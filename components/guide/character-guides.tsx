@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Heart, Star, Gift, MessageCircle } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { Heart, Star, Gift, MessageCircle } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const characters = [
   {
@@ -28,7 +28,7 @@ const characters = [
   },
   {
     id: "cousin2",
-    name: "表妹",
+    name: "小表姐",
     type: "main",
     difficulty: 4,
     description: "害羞内向的高中生，喜欢阅读和画画",
@@ -56,13 +56,17 @@ const characters = [
     tips: "经常光顾店铺购物可以触发特殊对话",
     events: ["店铺帮忙事件", "进货搬运事件", "雪夜事件"],
   },
-]
+];
 
 export function CharacterGuides() {
-  const [selectedType, setSelectedType] = useState<"all" | "main" | "sub">("all")
-  const [expandedChar, setExpandedChar] = useState<string | null>(null)
+  const [selectedType, setSelectedType] = useState<"all" | "main" | "sub">(
+    "all"
+  );
+  const [expandedChar, setExpandedChar] = useState<string | null>(null);
 
-  const filteredCharacters = characters.filter((char) => selectedType === "all" || char.type === selectedType)
+  const filteredCharacters = characters.filter(
+    (char) => selectedType === "all" || char.type === selectedType
+  );
 
   return (
     <section id="characters" className="py-16 md:py-24">
@@ -72,8 +76,12 @@ export function CharacterGuides() {
             <Heart className="w-4 h-4" />
             角色攻略
           </div>
-          <h2 className="text-2xl md:text-4xl font-bold mb-4">全角色好感度攻略</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">详细的角色攻略，包含送礼偏好、事件触发条件和实用技巧</p>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">
+            全角色好感度攻略
+          </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            详细的角色攻略，包含送礼偏好、事件触发条件和实用技巧
+          </p>
         </div>
 
         {/* 筛选按钮 */}
@@ -86,7 +94,9 @@ export function CharacterGuides() {
             <Button
               key={filter.value}
               variant={selectedType === filter.value ? "default" : "outline"}
-              onClick={() => setSelectedType(filter.value as typeof selectedType)}
+              onClick={() =>
+                setSelectedType(filter.value as typeof selectedType)
+              }
             >
               {filter.label}
             </Button>
@@ -96,15 +106,22 @@ export function CharacterGuides() {
         {/* 角色卡片 */}
         <div className="grid gap-6 max-w-4xl mx-auto">
           {filteredCharacters.map((char) => (
-            <div key={char.id} className="bg-card border-4 border-border shadow-md overflow-hidden">
+            <div
+              key={char.id}
+              className="bg-card border-4 border-border shadow-md overflow-hidden"
+            >
               <div
                 className="p-4 md:p-6 cursor-pointer hover:bg-secondary/30 transition-colors"
-                onClick={() => setExpandedChar(expandedChar === char.id ? null : char.id)}
+                onClick={() =>
+                  setExpandedChar(expandedChar === char.id ? null : char.id)
+                }
               >
                 <div className="flex flex-col md:flex-row md:items-center gap-4">
                   {/* 角色头像占位 */}
                   <div className="w-20 h-20 bg-secondary border-4 border-border flex items-center justify-center flex-shrink-0">
-                    <span className="text-3xl font-bold text-primary">{char.name[0]}</span>
+                    <span className="text-3xl font-bold text-primary">
+                      {char.name[0]}
+                    </span>
                   </div>
 
                   <div className="flex-1">
@@ -113,22 +130,30 @@ export function CharacterGuides() {
                       <span
                         className={cn(
                           "px-2 py-0.5 text-xs font-bold border-2 border-border",
-                          char.type === "main" ? "bg-pink-100 text-pink-600" : "bg-blue-100 text-blue-600",
+                          char.type === "main"
+                            ? "bg-pink-100 text-pink-600"
+                            : "bg-blue-100 text-blue-600"
                         )}
                       >
                         {char.type === "main" ? "主角色" : "支线"}
                       </span>
                     </div>
-                    <p className="text-muted-foreground text-sm mb-2">{char.description}</p>
+                    <p className="text-muted-foreground text-sm mb-2">
+                      {char.description}
+                    </p>
                     {/* 难度星级 */}
                     <div className="flex items-center gap-1">
-                      <span className="text-xs text-muted-foreground mr-1">攻略难度:</span>
+                      <span className="text-xs text-muted-foreground mr-1">
+                        攻略难度:
+                      </span>
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star
                           key={i}
                           className={cn(
                             "w-4 h-4",
-                            i < char.difficulty ? "text-amber-500 fill-amber-500" : "text-gray-300",
+                            i < char.difficulty
+                              ? "text-amber-500 fill-amber-500"
+                              : "text-gray-300"
                           )}
                         />
                       ))}
@@ -153,7 +178,10 @@ export function CharacterGuides() {
                       </div>
                       <ul className="space-y-1">
                         {char.gifts.map((gift, index) => (
-                          <li key={index} className="text-sm flex items-center gap-2">
+                          <li
+                            key={index}
+                            className="text-sm flex items-center gap-2"
+                          >
                             <span className="w-2 h-2 bg-pink-500"></span>
                             {gift}
                           </li>
@@ -169,7 +197,10 @@ export function CharacterGuides() {
                       </div>
                       <ul className="space-y-1">
                         {char.events.map((event, index) => (
-                          <li key={index} className="text-sm flex items-center gap-2">
+                          <li
+                            key={index}
+                            className="text-sm flex items-center gap-2"
+                          >
                             <span className="w-2 h-2 bg-blue-500"></span>
                             {event}
                           </li>
@@ -195,5 +226,5 @@ export function CharacterGuides() {
         </div>
       </div>
     </section>
-  )
+  );
 }
