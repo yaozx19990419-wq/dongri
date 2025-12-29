@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://drkxq.cn",
+    canonical: "/guide",
   },
   icons: {
     icon: [
