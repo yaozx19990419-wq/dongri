@@ -81,7 +81,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "zh_CN",
-    url: "https://winter-memories.game",
+    url: "https://drkxq.cn",
     siteName: "冬日狂想曲 - Winter Memories",
     title: "冬日狂想曲 - 温馨治愈的像素风文字冒险游戏",
     description:
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://winter-memories.game",
+    canonical: "https://drkxq.cn",
   },
   icons: {
     icon: [
