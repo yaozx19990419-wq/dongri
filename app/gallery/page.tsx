@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description:
     "浏览《冬日狂想曲》精美的像素风格游戏截图和CG画面，感受温馨的冬日氛围。包含场景截图、角色CG、小游戏画面等。",
   keywords: ["冬日狂想曲", "游戏截图", "CG画廊", "像素游戏", "Winter Memories"],
+  alternates: {
+    canonical: "/gallery",  // <--- 关键点：这里要改成当前页面的路径
+  },
 };
 
 export default function GalleryPage() {
